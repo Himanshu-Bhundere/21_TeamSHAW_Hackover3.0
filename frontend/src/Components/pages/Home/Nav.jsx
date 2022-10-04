@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import '../../../App.css'
 var mySidebar = document.getElementById("mySidebar");
 
 
@@ -16,11 +17,9 @@ function w3_close() {
     mySidebar.style.display = "none";
 }
 
-
-
 const Nav = () => {
   return (
-    <div>
+    <div className='leftm'>
       <div className="w3-top">
       <div className="w3-bar w3-white w3-card" id="myNavbar">
         <a href="#Home" className="w3-bar-item w3-button w3-wide"><img src="Logo.png" alt="" style={{width: "30px"}} />SHAW'rganizer</a>

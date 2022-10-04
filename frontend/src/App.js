@@ -1,7 +1,5 @@
-import { Routes, Route, Link } from 'react-router-dom';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
 import Home from './Components/pages/Home'
-import Nav from './Components/pages/Home/Nav';
 import Login from './Components/Login';
 
 function App() {
@@ -10,6 +8,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='login' element={<Login />} />
+        <Route path='*' element={<h1>Page not found</h1>} />
       </Routes>
     </div>
   );

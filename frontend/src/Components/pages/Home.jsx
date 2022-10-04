@@ -1,5 +1,6 @@
 import React from 'react'
 import Nav from './Home/Nav'
+import '../../App.css'
 const Home = () => {
   return (
         <div>
