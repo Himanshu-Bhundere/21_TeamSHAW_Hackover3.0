@@ -35,6 +35,9 @@ app.get('/login', async (req, res) => {
     res.render("login")
 })
 
+app.get("/events", async(req, res)=>{
+    res.render("events")
+})
 
 app.listen(3000, () => {
     console.log("APP IS LISTENING ON PORT 3000!");
