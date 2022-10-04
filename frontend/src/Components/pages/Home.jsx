@@ -1,12 +1,17 @@
 import React from 'react'
-
+import Nav from './Home/Nav'
 const Home = () => {
   return (
-    <main>
         <div>
-            <button><a href="login.html">Login</a></button>            
-        </div>
-    </main>
+          <Nav />
+
+          <main>
+              <div>
+                  <button><a href="login.html">Login</a></button>            
+              </div>
+          </main>
+
+      </div>
   )
 }
 
