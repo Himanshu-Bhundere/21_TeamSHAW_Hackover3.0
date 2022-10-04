@@ -19,9 +19,12 @@ mongoose.connect('mongodb://localhost:27017/eventHack', { useNewUrlParser: true,
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(express.static(__dirname + '/public'))
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'))
 app.use(express.static(__dirname));
+app.use('./build', express.static(path.join(__dirname, 'node_modules/three/build')))
+app.use('./jsm', express.static(path.join(__dirname, 'node_modules/three/examples/jsm')))
 
 
 app.post('/login', async (req, res) => {
@@ -29,6 +32,11 @@ app.post('/login', async (req, res) => {
     await newUser.save();
     res.redirect(`login`)
 
+})
+
+app.get('/', (req, res) => {
+    console.log('User has connected...')
+    res.render('index')
 })
 
 app.get('/login', async (req, res) => {
