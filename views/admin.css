@@ -1,7 +1,3 @@
-body{
-    /* margin: 1em; */
-}
-
 #cards{
     display: flex;
     /* align-content: flex-end; */
@@ -11,15 +7,20 @@ body{
 }
 
 .card{
-    margin-left: 1em;
+    margin: 2em;
     background: linear-gradient(to bottom, #c4539a,#94b1df);
 }
 
 .table{
     text-align: center;
+    border: 2px solid grey;
+    width: 60%;
 }
 
 .card-subtitle{
     color: rgb(47, 118, 65) !important;
 }
 
+th{
+    background-color: darkgray !important;
+}
