@@ -10,96 +10,94 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          <a class="navbar-brand" href="#"> Administrator</a>
-          <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Admin</h5>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Manage Events</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Manage accounts</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Manage Data
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#">Customer data</a></li>
-                    <li><a class="dropdown-item" href="#">Organizer data</a></li>
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">Admin</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Manage Events</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Manage Accounts</span>
+                        </a>
+                    </li>
                     <!-- <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-                  </ul>
-                </li>
-                <!-- <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Pages
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#">home</a></li>
-                    <li><a class="dropdown-item" href="#">about</a></li>
-                    <li><a class="dropdown-item" href="#">contact</a></li>
+                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Manage Data</span></a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Customer Data</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Organizer Data</span></a>
+                            </li>
+                        </ul>
+                    </li> -->
                     <li>
-                      <hr class="dropdown-divider">
+                      <div class="dropdown pb-4">
+                          <a href="#" class="nav-link align-middle px-0 dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                              <span class="d-none d-sm-inline mx-1">Manage Data</span>
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                              <li><a class="dropdown-item" href="#">Customer Data</a></li>
+                              <li><a class="dropdown-item" href="#">Organizer Data</a></li>
+                          </ul>
+                      </div>
                     </li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li> 
-                  </ul>
-                </li> -->
-
-              </ul>
-              <!-- <form class="d-flex mt-3" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-success" type="submit">Search</button>
-              </form> -->
+                </ul>
+                <hr>
             </div>
-          </div>
         </div>
-      </nav><br><br><b><br></b>
+        <div class="col py-3">
+          <!-- DATA CARDS -->
       <div id="cards">
-          <div class="users-count">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title"><img id="user-icon" src="./user-icon.png" alt="oops" width="20" height="20">  Users</h5>
-                  <h2 class="card-subtitle mb-2 text-muted">10,000</h2>
-                  <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a> -->
-                </div>
+        <div class="users-count">
+          <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title"><img id="user-icon" src="./user-icon.png" alt="oops" width="20" height="20">  Users</h5>
+                <h2 class="card-subtitle mb-2 text-muted">10,000</h2>
+                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a> -->
               </div>
-          </div>
-          <div class="events-count">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title"><img id="user-icon" src="./calender.png" alt="oops" width="25" height="20"> Events</h5>
-                  <h2 class="card-subtitle mb-2 text-muted">200</h2>
-                </div>
+            </div>
+        </div>
+        <div class="events-count">
+          <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title"><img id="user-icon" src="./calender.png" alt="oops" width="25" height="20"> Events</h5>
+                <h2 class="card-subtitle mb-2 text-muted">200</h2>
               </div>
-          </div>
-          <div class="tot-rev">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title"><img id="user-icon" src="./dollar-icon.png" alt="oops" width="25" height="20"> Total revenue</h5>
-                  <h2 class="card-subtitle mb-2 text-muted">1,20,000</h2>
-                </div>
+            </div>
+        </div>
+        <div class="tot-rev">
+          <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title"><img id="user-icon" src="./dollar-icon.png" alt="oops" width="25" height="20"> Total revenue</h5>
+                <h2 class="card-subtitle mb-2 text-muted">1,20,000</h2>
               </div>
-          </div>
-      </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
