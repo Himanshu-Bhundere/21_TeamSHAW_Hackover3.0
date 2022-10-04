@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/Hackathon/media/logo_short.png" type="image/x-icon"/>
-    <link rel="stylesheet" href="link.css">
-    <title>Sign In / Up</title>
-  </head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="/Hackathon/Server/request.js"></script>
-  <script>
-    $(document).ready(function () {
-      document.querySelector(".img-btn").addEventListener("click", function () {
-        document.querySelector(".cont").classList.toggle("s-signup");
-      });
-    });
-  </script>
-  <style>
-   
-  </style>
-  <body>
+import React from 'react'
+import '../Login.css'
+
+const Login = () => {
+  return (
     <div class="cont">
       <form id="signinForm">
         <div class="form sign-in">
@@ -37,7 +19,7 @@
           <p class="forgot-pass">Forgot Password ?</p>
         </div>
       </form>
-      <form id="signupForm" method="POST" action="/signup">
+      <form id="signupForm">
         <div class="sub-cont">
           <div class="img">
             <div class="img-text m-up">
@@ -69,10 +51,16 @@
               <span>Password</span>
               <input type="password" name="password" />
             </label>
+            <label>
+              <span>Confirm Password</span>
+              <input type="password" />
+            </label>
             <button type="submit" class="submit">Sign Up Now</button>
           </div>
         </div>
       </form>
     </div>
-  </body>
-</html>
+  )
+}
+
+export default Login
