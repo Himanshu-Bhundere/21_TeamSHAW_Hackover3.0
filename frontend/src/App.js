@@ -1,7 +1,7 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Home from './Components/pages/Home'
-import Nav from './Nav';
+import Nav from './Components/pages/Home/Nav';
 function App() {
   return (
     <div className="App">
