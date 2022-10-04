@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const customerSchema = new mongoose.Schema({
-    img: {
+    img: String,
+    name: {
         type: String,
         required: true
     },
@@ -9,12 +10,16 @@ const customerSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    password: {
+    address: {
         type: String,
         required: true,
+    },
+    mobile: {
+        type: String,
+        required: true
     }
 })
 
-const Sign = mongoose.model('Signin', signSchema);
+const Customer = mongoose.model('CustDetails', customerSchema);
 
-module.exports = Sign;
+module.exports = Customer;
