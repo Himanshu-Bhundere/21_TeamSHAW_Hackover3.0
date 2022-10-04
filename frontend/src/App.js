@@ -1,11 +1,11 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Home from './Components/pages/Home'
-
+import Nav from './Nav';
 function App() {
   return (
     <div className="App">
-      <header>
+      {/* <header>
         <nav>
             <ul>
                 <li><Link to="/">Home</Link></li>
@@ -13,7 +13,8 @@ function App() {
                 <li><Link to="/contact">Contact</Link></li>       
             </ul>
         </nav>
-    </header>
+    </header> */}
+    <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='login' element={<h1>Login</h1>} />
