@@ -95,6 +95,10 @@ app.get("/contact", async(req, res) => {
     res.render("contact")
 })
 
+app.get('/organizer', async(req, res) => {
+    res.render('organizer')
+})
+
 app.listen(PORT, () => {
     console.log(`SERVER IS LISTENING ON PORT ${PORT}`);
 })
