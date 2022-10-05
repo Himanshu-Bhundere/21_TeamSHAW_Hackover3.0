@@ -17,7 +17,7 @@ const { SodiumPlus } = require('sodium-plus')
 
 app.post('/signup', async(req, res) => {
     const { username, email, category, password, cpass } = req.body;
-const hashedPassword = async function(req, res) {
+    const hashedPassword = async function(req, res) {
     let sodium = await SodiumPlus.auto();
 
     let key = await sodium.crypto_secretbox_keygen()
@@ -31,7 +31,8 @@ const hashedPassword = async function(req, res) {
     const newUser = new Sign({username: `${username}`, category: `${category}`, email: `${email}`, password: `${hashedPassword}`, cpass: `${cpass}`,})
     await newUser.save();
     res.redirect(`login`)
-};
+}
+});
 
 
 
@@ -71,6 +72,7 @@ app.post('/login', async (req, res) => {
         await newUser.save();
         res.redirect(`login`);;
     
+    // const data = 
 })
 
 
