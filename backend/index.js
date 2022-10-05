@@ -8,6 +8,7 @@ const bcrypt = require('bcrypt');
 const Sign = require('./models/login');
 const Contact = require('./models/contact')
 const Organ = require('./models/organization');
+const Razor = require('./models/razor');
 const { rejects } = require('assert');
 
 const PORT = 5000
