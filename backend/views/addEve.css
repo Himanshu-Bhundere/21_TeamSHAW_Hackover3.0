@@ -1,4 +1,4 @@
-* {
+table{
     color: white;
 }
 
@@ -35,9 +35,8 @@ h1{
     margin-bottom: 20px;
 }
 
-.modal{
-    color: black;
-    
+.modal-content{
+    color: black !important;
 }
 
 .buttonMod{
