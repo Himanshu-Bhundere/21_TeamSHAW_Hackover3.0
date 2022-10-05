@@ -7,7 +7,8 @@ const bcrypt = require('bcrypt');
 
 const Sign = require('./models/login');
 const Contact = require('./models/contact')
-const Organ = require('./models/organization')
+const Organ = require('./models/organization');
+const { rejects } = require('assert');
 
 const PORT = 5000
 
@@ -58,15 +59,17 @@ app.use('./jsm', express.static(path.join(__dirname, 'node_modules/three/example
 
 app.post('/login', async (req, res) => {
     const { username, email, category, password, cpass } = req.body;
-    const securePassword = async (password) => {
-        const passwordHash = await bcrypt.hash(password, 10);
-        if(!passwordHash)
-        return passwordHash;
-    }
-    console.log(securePassword(`${password}`));
-    const newUser = new Sign({ username: `${username}`, email: `${email}`, category: `${category}`, password: `${securePassword(password)}`, cpass: `${securePassword(cpass)}` })
-    await newUser.save();
-    res.redirect(`login`);;
+    const newUser = new Sign({ username: `${username}`, email: `${email}`, category: `${category}`, password: `${password}`, cpass: `${cpass}`})
+    console.log(newUser);
+    if (!email || !password || !cpass)
+        return res.status(400).json({ msg: "Not all fields have been entered." });
+    if (password.length < 5)
+        return res.status(400).json({ msg: "The password needs to be at least 5 characters long." });
+    if (password !== cpass)
+        return res.status(400).json({ msg: "Passwords do not match. Enter the same password twice for verification." });
+    else
+        await newUser.save();
+        res.redirect(`login`);;
     
 })
 
