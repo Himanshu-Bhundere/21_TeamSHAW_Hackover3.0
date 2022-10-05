@@ -71,6 +71,7 @@ app.get('/addEvents', async (req, res) => {
 app.get('/admin', async (req, res) => {
     const organs = await Organ.find({});
     res.render("admin", {organs});
+    console.log("Heloo");
 })
 
 
