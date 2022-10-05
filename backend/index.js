@@ -8,6 +8,7 @@ const bcrypt = require('bcrypt');
 const Sign = require('./models/login');
 const Contact = require('./models/contact')
 const Organ = require('./models/organization');
+const Razor = require('./models/razor');
 const { rejects } = require('assert');
 
 const PORT = 5000
@@ -83,12 +84,9 @@ app.get('/login', async (req, res) => {
 app.post("/newEvent", async (req, res)=> {
     const newOrg = new Organ(req.body);
     await newOrg.save();
-    res.redirect("addEvents")
+    res.redirect("organizer")
 })
 
-app.get('/addEvents', async (req, res) => {
-    res.render("addEvents");
-})
 
 app.get('/admin', async (req, res) => {
     const organs = await Organ.find({});
