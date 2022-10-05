@@ -12,7 +12,10 @@ body{
 
 .card{
     margin-left: 1em;
-    background: linear-gradient(to bottom, #c4539a,#94b1df);
+    /* background: linear-gradient(to bottom, #c4539a,#94b1df); */
+    
+    background-image: url('../pictures/space.jpg');
+
 }
 
 .table{
@@ -22,3 +25,4 @@ body{
 .card-subtitle{
     color: rgb(47, 118, 65) !important;
 }
+

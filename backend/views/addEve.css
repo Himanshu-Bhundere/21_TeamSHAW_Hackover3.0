@@ -1,8 +1,14 @@
+* {
+    color: white;
+}
+
 body{
     padding: 20;
     margin: 20;
     background: linear-gradient(to right, #0f5f87,#3c9662);
+    
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
 }
 
 h1{
@@ -31,6 +37,7 @@ h1{
 
 .modal{
     color: black;
+    
 }
 
 .buttonMod{
@@ -58,4 +65,22 @@ h1{
     margin-bottom: 20px;
     display: flex;
     justify-items: center;
+}
+
+#cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-secondary {
+    background-color: #0f85c0;
+    padding: 14px 16px;
+}
+
+.card-title {
+    color: black;
+}
+
+.card:hover {
+    transform: scale(1.1);
 }
