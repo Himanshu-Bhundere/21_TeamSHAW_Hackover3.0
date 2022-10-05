@@ -43,18 +43,16 @@ app.post('/login', async (req, res) => {
     
 })
 
-<<<<<<< HEAD
 // app.get('/', (req, res) => {
 //     console.log('User has connected...')
 //     res.render('index')
 // })
-=======
+
 
 app.get('/', (req, res) => {
     console.log('User has connected...')
     res.render('index')
 })
->>>>>>> f70e52649656d05d4acb484c1cbff235e2f332cb
 
 app.get('/login', async (req, res) => {
     res.render("login")
@@ -74,6 +72,6 @@ app.get("/contact", async(req, res) => {
     res.render("contact")
 })
 
-app.listen(5000, () => {
+app.listen(3000, () => {
     console.log("APP IS LISTENING ON PORT 5000!");
 })
