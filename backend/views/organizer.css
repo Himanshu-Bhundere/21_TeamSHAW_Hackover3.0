@@ -1,0 +1,24 @@
+body{
+    /* margin: 1em; */
+}
+
+#cards{
+    display: flex;
+    /* align-content: flex-end; */
+    float: right;
+    flex-direction: row;
+    border-radius: 10px;
+}
+
+.card{
+    margin-left: 1em;
+    background: linear-gradient(to bottom, #c4539a,#94b1df);
+}
+
+.table{
+    text-align: center;
+}
+
+.card-subtitle{
+    color: rgb(47, 118, 65) !important;
+}

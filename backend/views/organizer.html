@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHAW'rganizer | Organizer</title>
+    <link rel="icon" href="./admin-icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">Organizer</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Manage Events</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Add an Event</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">View Events</span>
+                        </a>
+                    </li>
+                </ul>
+                <hr>
+            </div>
+        </div>
+        <div class="col py-3">
+          <!-- DATA CARDS -->
+      <div id="cards">
+        <div class="events-count">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title"><img id="user-icon" src="./calender.png" alt="oops" width="25" height="20"> Events</h5>
+                  <h2 class="card-subtitle mb-2 text-muted">3</h2>
+                </div>
+              </div>
+        </div>
+        <div class="tickets-count">
+          <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title"><img id="user-icon" src="./ticket-icon.png" alt="oops" width="20" height="20"> Tickets sold</h5>
+                <h2 class="card-subtitle mb-2 text-muted">250</h2>
+                
+                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a> -->
+              </div>
+            </div>
+        </div>
+        <div class="tot-rev">
+          <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title"><img id="user-icon" src="./dollar-icon.png" alt="oops" width="25" height="20"> Total revenue</h5>
+                <h2 class="card-subtitle mb-2 text-muted">$ 40,000</h2>
+              </div>
+            </div>
+          </div>
+        </div><br><br><br><br><br><br>
+        <div id="earn-table">
+          <caption><h1>Earnings per Event</h1></caption>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Event Name</th>
+                <th scope="col">Event Location</th>
+                <th scope="col">Ticket price</th>
+                <th scope="col">Tickets sold</th>
+                <th scope="col">Total profit</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Unscript 2k22</td>
+                <td>CRCE college</td>
+                <td>150</td>
+                <td>180</td>
+                <td>25,000</td>
+                <td>COMPLETED</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Cresendo 2k22</td>
+                <td>CRCE college</td>
+                <td>50</td>
+                <td>500</td>
+                <td>-</td>
+                <td>ONGOING</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Synergy 2k22</td>
+                <td>CRCE college</td>
+                <td>50</td>
+                <td>150</td>
+                <td>-</td>
+                <td>UPCOMING</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+</div>
+</body>
+</html>
