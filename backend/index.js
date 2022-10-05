@@ -35,10 +35,10 @@ app.post('/login', async (req, res) => {
 
 })
 
-app.get('/', (req, res) => {
-    console.log('User has connected...')
-    res.render('index')
-})
+// app.get('/', (req, res) => {
+//     console.log('User has connected...')
+//     res.render('index')
+// })
 
 app.get('/login', async (req, res) => {
     res.render("login")
@@ -59,6 +59,6 @@ app.get("/contact", async(req, res) => {
     res.render("contact")
 })
 
-app.listen(3000, () => {
-    console.log("APP IS LISTENING ON PORT 3000!");
+app.listen(5000, () => {
+    console.log("APP IS LISTENING ON PORT 5000!");
 })
