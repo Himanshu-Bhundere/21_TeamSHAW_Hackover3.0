@@ -42,7 +42,7 @@ app.post('/login', async (req, res) => {
     console.log(securePassword(`${password}`));
     const newUser = new Sign({ username: `${username}`, email: `${email}`, category: `${category}`, password: `${securePassword(password)}`, cpass: `${securePassword(cpass)}` })
     await newUser.save();
-    res.redirect(`login`)
+    res.redirect(`login`);;
     
 })
 
@@ -56,6 +56,10 @@ app.get('/', (req, res) => {
 
 app.get('/login', async (req, res) => {
     res.render("login")
+})
+
+app.get('/newEvent', async (req, res) => {
+    res.render("addEvents");
 })
 
 app.post('/events', async (req, res) => {
