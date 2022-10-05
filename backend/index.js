@@ -36,19 +36,17 @@ app.use('./jsm', express.static(path.join(__dirname, 'node_modules/three/example
 
 app.post('/login', async (req, res) => {
     const { username, email, category, password, cpass } = req.body;
-    const securePassword = async (password) => {
-        const passwordHash = await bcrypt.hash(password, 10, async(err, hash) => {
-            if(err) return rejects(err)
-            return hash
-        });
-        if(passwordHash)
-        return passwordHash;
-    }
-    console.log(securePassword(`${password}`));
-    const newUser = new Sign({ username: `${username}`, email: `${email}`, category: `${category}`, password: `${securePassword(password)}`, cpass: `${securePassword(cpass)}` })
+    const newUser = new Sign({ username: `${username}`, email: `${email}`, category: `${category}`, password: `${password}`, cpass: `${cpass}`})
     console.log(newUser);
-    await newUser.save();
-    res.redirect(`login`);;
+    if (!email || !password || !cpass)
+        return res.status(400).json({ msg: "Not all fields have been entered." });
+    if (password.length < 5)
+        return res.status(400).json({ msg: "The password needs to be at least 5 characters long." });
+    if (password !== cpass)
+        return res.status(400).json({ msg: "Passwords do not match. Enter the same password twice for verification." });
+    else
+        await newUser.save();
+        res.redirect(`login`);;
     
 })
 
