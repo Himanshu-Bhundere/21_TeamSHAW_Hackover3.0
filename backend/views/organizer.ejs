@@ -116,8 +116,15 @@
                                           <input type="text" name="landmark" id="landmark" placeholder="landmark" style="width: 100%;"><br><br> 
                               
                                           <label for="ticket">Ticket price: </label>
-                                          <input type="number" name="ticket" id="ticket" style="width: 30%;"><br><br>
-                              
+                                          <input type="text" name="ticket_price" list="ticket_price">
+                                            <datalist id="ticket_price">
+                                              <option value="150">
+                                              <option value="200">
+                                              <option value="250">
+                                              <option value="300">
+                                              <option value="500">
+                                            </datalist><br><br>
+                                                                      
                                           <label for="datetime">Date and Time of the event: </label>
                                           <input type="datetime-local" name="datetime" id="datetime"><br>
                                           <label for="duration">Duration of event (in hrs): </label>
@@ -218,6 +225,8 @@
       </div>
     </div>
 </div>
+
+<form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KPwd4QWWCLpRkx" async></script></form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
