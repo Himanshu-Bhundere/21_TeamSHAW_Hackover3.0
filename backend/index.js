@@ -31,7 +31,7 @@ app.use('./jsm', express.static(path.join(__dirname, 'node_modules/three/example
 app.post('/login', async (req, res) => {
     const newUser = new Sign(req.body);
     await newUser.save();
-    res.redirect(`login`)
+    res.redirect(`event`)
 
 })
 
