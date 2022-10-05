@@ -3,9 +3,11 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override')
+const bcrypt = require('bcrypt');
 
 const Sign = require('./models/login');
 const Contact = require('./models/contact')
+const Organ = require('./models/organization')
 
 mongoose.connect('mongodb://localhost:27017/eventHack', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
@@ -29,16 +31,30 @@ app.use('./jsm', express.static(path.join(__dirname, 'node_modules/three/example
 
 
 app.post('/login', async (req, res) => {
-    const newUser = new Sign(req.body);
+    const { username, email, category, password, cpass } = req.body;
+    const securePassword = async (password) => {
+        const passwordHash = await bcrypt.hash(password, 10);
+        return passwordHash;
+    }
+    console.log(securePassword(`${password}`));
+    const newUser = new Sign({ username: `${username}`, email: `${email}`, category: `${category}`, password: `${securePassword(password)}`, cpass: `${securePassword(cpass)}` })
     await newUser.save();
     res.redirect(`login`)
-
+    
 })
 
+<<<<<<< HEAD
 // app.get('/', (req, res) => {
 //     console.log('User has connected...')
 //     res.render('index')
 // })
+=======
+
+app.get('/', (req, res) => {
+    console.log('User has connected...')
+    res.render('index')
+})
+>>>>>>> f70e52649656d05d4acb484c1cbff235e2f332cb
 
 app.get('/login', async (req, res) => {
     res.render("login")
@@ -48,7 +64,6 @@ app.post('/events', async (req, res) => {
     const newCon = new Contact(req.body);
     await newCon.save();
     res.redirect(`contact`)
-
 })
 
 app.get("/events", async(req, res)=>{
