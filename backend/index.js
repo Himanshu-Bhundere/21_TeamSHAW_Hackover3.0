@@ -50,7 +50,6 @@ app.post('/login', async (req, res) => {
         await newUser.save();
         res.redirect(`login`);;
     
-    // const data = 
 })
 
 app.post('/signup', async(req, res) => {
@@ -102,6 +101,17 @@ app.post('/events', async (req, res) => {
     const newCon = new Contact(req.body);
     await newCon.save();
     res.redirect(`contact`)
+})
+
+app.post("/events/login", async (req, res) => {
+    const { username, password } = req.body;
+    const log = await Sign.findOne({username}) 
+    if(log.password == password && log.username == username){
+        res.redirect("/events");
+    }
+    else {
+        return res.status(400).json({ msg: "Password or username did not match" });
+    }
 })
 
 app.get("/events", async(req, res)=>{
