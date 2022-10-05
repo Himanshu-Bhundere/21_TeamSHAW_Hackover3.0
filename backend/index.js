@@ -37,6 +37,7 @@ app.post('/login', async (req, res) => {
     const { username, email, category, password, cpass } = req.body;
     const securePassword = async (password) => {
         const passwordHash = await bcrypt.hash(password, 10);
+        if(!passwordHash)
         return passwordHash;
     }
     console.log(securePassword(`${password}`));
