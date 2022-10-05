@@ -4,7 +4,8 @@ const path = require('path');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override')
 
-const Login = require('./models/login');
+const Sign = require('./models/login');
+const Contact = require('./models/contact')
 
 mongoose.connect('mongodb://localhost:27017/eventHack', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
@@ -28,7 +29,7 @@ app.use('./jsm', express.static(path.join(__dirname, 'node_modules/three/example
 
 
 app.post('/login', async (req, res) => {
-    const newUser = new Login(req.body);
+    const newUser = new Sign(req.body);
     await newUser.save();
     res.redirect(`login`)
 
@@ -43,8 +44,19 @@ app.get('/login', async (req, res) => {
     res.render("login")
 })
 
+app.post('/events', async (req, res) => {
+    const newCon = new Contact(req.body);
+    await newCon.save();
+    res.redirect(`contact`)
+
+})
+
 app.get("/events", async(req, res)=>{
     res.render("events")
+})
+
+app.get("/contact", async(req, res) => {
+    res.render("contact")
 })
 
 app.listen(3000, () => {

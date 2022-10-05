@@ -13,7 +13,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: -webkit-linear-gradient(left, #7579ff, #b224ef);
+  background-image: url('../pictures/space.jpg');
+  /* background: -webkit-linear-gradient(left, #7579ff, #b224ef); */
   font-family: "Nunito", sans-serif;
 }
 
@@ -171,7 +172,7 @@ button {
   top: 0;
   width: 900px;
   height: 100%;
-  background-image: url(/Hackathon/media/Back.jpeg);
+  background-image: url("../pictures/moon.jpg");
   background-size: cover;
   transition: -webkit-transform 1.2s ease-in-out;
   transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;

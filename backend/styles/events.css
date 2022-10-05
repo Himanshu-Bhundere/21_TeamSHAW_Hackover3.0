@@ -2,8 +2,24 @@ body{
     margin:0;
     padding:0;
     background-image: url("../pictures/space.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'Acme';
   }
+
+.navbar{
+  background-color: royalblue !important;
+  color: aliceblue;
+  }
+
+.navbar a {
+  color: aliceblue;
+}
+
+.navbar a:hover{
+  color: white;
+}
+
   
   .container{
     max-width:1000px;
@@ -77,4 +93,13 @@ body{
     padding:0;
     line-height:25px;
     font-size:1.1em;
+  }
+
+  .contact{
+    margin-left: 25%;
+    width: 50%;
+  }
+
+  .btn-primary{
+    margin: 1rem 0 0 50%;
   }
