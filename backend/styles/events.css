@@ -103,3 +103,13 @@ body{
   .btn-primary{
     margin: 1rem 0 0 50%;
   }
+
+  .nav-link{
+    font-weight: bold;
+
+  }
+
+  .nav-link:hover {
+    background-color: rgb(0, 0, 99);
+    color: white;
+  }
