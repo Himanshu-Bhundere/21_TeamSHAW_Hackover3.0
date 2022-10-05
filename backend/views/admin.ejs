@@ -97,53 +97,33 @@
             </div>
           </div>
         </div><br><br><br><br><br>
-        <div id="earn-table">
-          <caption><h1>Earnings per Event</h1></caption>
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Event Name</th>
-                <th scope="col">Event Location</th>
-                <th scope="col">Ticket price</th>
-                <th scope="col">Tickets sold</th>
-                <th scope="col">Total profit</th>
-                <th scope="col">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td scope="row">1</td>
-                <td>Unscript 2k22</td>
-                <td>CRCE college</td>
-                <td>100</td>
-                <td>180</td>
-                <td>50,000</td>
-                <td>COMPLETED</td>
-              </tr>
-              <tr>
-                <td scope="row">2</td>
-                <td>Hackover 3.0</td>
-                <td>CRCE college</td>
-                <td>50</td>
-                <td>500</td>
-                <td>-</td>
-                <td>ONGOING</td>
-              </tr>
-              <tr>
-                <td scope="row">3</td>
-                <td>Synergy 2k22</td>
-                <td>CRCE college</td>
-                <td>75</td>
-                <td>150</td>
-                <td>-</td>
-                <td>UPCOMING</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+        <h2>Responsive Table</h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>Organization Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Event Name</th>
+            <th>Location</th>
+            <th>Ticket</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% for(let org of organs){ %>
+        <tr>
+            <td><%= org.nameOrg %></td>
+            <td><%= org.phone %></td>
+            <td><%= org.email %></td>
+            <td><%= org.eventName %></td>
+            <td><%= org.location %></td>
+            <td><%= org.ticket %></td>
+        </tr>
+        <% } %>
+        <tbody>
+    </table>
+</div>
 </div>
 </body>
 </html>

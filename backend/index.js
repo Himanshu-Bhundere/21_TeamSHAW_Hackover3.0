@@ -58,9 +58,21 @@ app.get('/login', async (req, res) => {
     res.render("login")
 })
 
-app.get('/newEvent', async (req, res) => {
+app.post("/newEvent", async (req, res)=> {
+    const newOrg = new Organ(req.body);
+    await newOrg.save();
+    res.redirect("addEvents")
+})
+
+app.get('/addEvents', async (req, res) => {
     res.render("addEvents");
 })
+
+app.get('/admin', async (req, res) => {
+    const organs = await Organ.find({});
+    res.render("admin", {organs});
+})
+
 
 app.post('/events', async (req, res) => {
     const newCon = new Contact(req.body);
