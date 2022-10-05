@@ -14,28 +14,6 @@ const PORT = 5000
 
 const { SodiumPlus } = require('sodium-plus')
 
-
-app.post('/signup', async(req, res) => {
-    const { username, email, category, password, cpass } = req.body;
-    const hashedPassword = async function(req, res) {
-    let sodium = await SodiumPlus.auto();
-
-    let key = await sodium.crypto_secretbox_keygen()
-    let nonce = await sodium.randombytes_buf(24)
-
-    let cipherText = await sodium.crypto_secretbox(password, nonce, key);
-    console.log(cipherText)
-    // let decrypted = await sodium.crypto_secretbox_open(cipherText, nonce, key);
-    // console.log(decrypted.toString('utf-8'))
-
-    const newUser = new Sign({username: `${username}`, category: `${category}`, email: `${email}`, password: `${hashedPassword}`, cpass: `${cpass}`,})
-    await newUser.save();
-    res.redirect(`login`)
-}
-});
-
-
-
 mongoose.connect('mongodb://localhost:27017/eventHack', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log("MONGO CONNECTION OPEN!!!")
@@ -75,8 +53,24 @@ app.post('/login', async (req, res) => {
     // const data = 
 })
 
+app.post('/signup', async(req, res) => {
+    const { username, email, category, password, cpass } = req.body;
+    const hashedPassword = async function(req, res) {
+    let sodium = await SodiumPlus.auto();
 
+    let key = await sodium.crypto_secretbox_keygen()
+    let nonce = await sodium.randombytes_buf(24)
 
+    let cipherText = await sodium.crypto_secretbox(password, nonce, key);
+    console.log(cipherText)
+    // let decrypted = await sodium.crypto_secretbox_open(cipherText, nonce, key);
+    // console.log(decrypted.toString('utf-8'))
+
+    const newUser = new Sign({username: `${username}`, category: `${category}`, email: `${email}`, password: `${hashedPassword}`, cpass: `${cpass}`})
+    await newUser.save();
+    res.redirect(`login`)
+}
+})
 
 app.get('/', (req, res) => {
     console.log('User has connected...')
