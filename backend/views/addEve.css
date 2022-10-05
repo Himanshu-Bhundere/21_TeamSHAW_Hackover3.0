@@ -29,20 +29,21 @@ h1{
     margin-bottom: 20px;
 }
 
-/* /* .btn-dark{
-    margin-left: 43%;
-    margin-bottom: 20px;
-    display: flex;
-    justify-items: center; */
+.modal{
+    color: black;
+}
 
 .buttonMod{
+    margin: 1rem 0 0 31%;
+    width: 47%;
     background-color: blueviolet;
     color: #ffa260;
     border: 2px solid;
-    padding: 1em 2em;
+    padding: 0.5em 1em;
     font-size: 1em;
     transition: color 0.25s,border-color 0.25s,box-shadow 0.25s,transform 0.25s;
 }
+
 .buttonMod:hover{
     border-color: #f1ff5c;
     color: white;
@@ -50,4 +51,11 @@ h1{
     0.5 for blur -0.4 for spread radius */
     transform: translateY(-0.25em);
     cursor: pointer;
+}
+
+.btn-dark{
+    margin-left: 43%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-items: center;
 }

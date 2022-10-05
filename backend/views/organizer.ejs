@@ -24,18 +24,50 @@
                             <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a href="#" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Manage Events</span>
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Events</span>
                         </a>
-                    </li>
-                    <li class="nav-item">
-                      <button type="button" class="btn btn-primary buttonMod" data-bs-toggle="modal" data-bs-target="#exampleModal" style="    position: relative;
-                      left: 38rem;
-                      top: 16rem;">
+                    </li> -->
+
+                    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                      <div class="modal-dialog modal-dialog-centered" style="margin-left: 32rem;">
+                        <div class="modal-content" style="width: 65%;">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalToggleLabel">Events</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <button type="button" class="btn btn-primary buttonMod" data-bs-toggle="modal" data-bs-target="#exampleModal">
                           + Add Event
                         </button>
-                        
+                        <button type="button" class="btn btn-primary buttonMod" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          Manage Event
+                        </button>
+                        <button type="button" class="btn btn-primary buttonMod" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          View Event
+                        </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                      <div class="modal-dialog modal-dialog-centered" style="margin-right: 32rem;">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            Hide this modal and show the first with the button below.
+                          </div>
+                          <div class="modal-footer">
+                            <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Back to first</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <a class="btn btn-secondary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Events</a>
+
+
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog">
@@ -101,12 +133,7 @@
                             </div>
                           </div>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">View Events</span>
-                        </a>
-                    </li>
+                    <!-- Modal -->
                 </ul>
                 <hr>
             </div>
