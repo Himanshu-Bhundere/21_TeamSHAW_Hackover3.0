@@ -9,7 +9,7 @@ const Sign = require('./models/login');
 const Contact = require('./models/contact')
 const Organ = require('./models/organization')
 
-const PORT = 3000 || 5000
+const PORT = 5000
 
 mongoose.connect('mongodb://localhost:27017/eventHack', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
