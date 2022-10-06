@@ -78,10 +78,10 @@ app.post('/signup', async(req, res) => {
 }
 })
 
-app.get('/', (req, res) => {
-    console.log('User has connected...')
-    res.render('index')
-})
+// app.get('/', (req, res) => {
+//     console.log('User has connected...')
+//     res.render('index')
+// })
 
 app.get('/login', async (req, res) => {
     res.render("login")
