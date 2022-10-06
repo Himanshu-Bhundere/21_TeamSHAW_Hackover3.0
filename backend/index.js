@@ -8,7 +8,6 @@ const bcrypt = require('bcrypt');
 const Sign = require('./models/login');
 const Contact = require('./models/contact')
 const Organ = require('./models/organization');
-const Razor = require('./models/razor');
 const { rejects } = require('assert');
 
 const PORT = 5000
@@ -24,6 +23,13 @@ mongoose.connect('mongodb://localhost:27017/eventHack', { useNewUrlParser: true,
         console.log(err)
     })
 
+
+// 500 - pl_KPwd4QWWCLpRkx
+// 350 - pl_KPwc3nTnBgfhMm
+// 250 - pl_KPwaupEH41pOTT
+// 150 - pl_KPvCs7TwtIjGZU
+
+const razor = {"150":"pl_KPvCs7TwtIjGZU", "250":"pl_KPwaupEH41pOTT", "350":"pl_KPwc3nTnBgfhMm", "500":"pl_KPwd4QWWCLpRkx"};
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -113,7 +119,7 @@ app.post("/events/login", async (req, res) => {
 })
 
 app.get("/events", async(req, res)=>{
-    res.render("events")
+    res.render("events", {razor})
 })
 
 app.get("/contact", async(req, res) => {
@@ -127,3 +133,4 @@ app.get('/organizer', async(req, res) => {
 app.listen(PORT, () => {
     console.log(`SERVER IS LISTENING ON PORT ${PORT}`);
 })
+
