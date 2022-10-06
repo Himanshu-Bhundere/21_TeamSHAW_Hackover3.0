@@ -14,14 +14,14 @@
 body{
     font-family: Helvetica;
     -webkit-font-smoothing: antialiased;
-    background: rgba( 71, 147, 227, 1);
+    /* background: rgba( 71, 147, 227, 1); */
 }
 h2{
     text-align: center;
     font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: white;
+    color: rgb(225, 217, 217);
     padding: 30px 0;
 }
 
@@ -29,7 +29,7 @@ h2{
 
 .table-wrapper{
     margin: 10px 70px 70px;
-    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+    box-shadow: 0px 35px 50px rgba(48, 47, 47, 0.2);
 }
 
 .fl-table {
@@ -55,14 +55,14 @@ h2{
 }
 
 .fl-table thead th {
-    color: #ffffff;
-    background: #4FC3A1;
+    color: rgb(50, 50, 50);
+    background: white;
 }
 
 
 .fl-table thead th:nth-child(odd) {
     color: #ffffff;
-    background: #cc097e;
+    background: rgb(57, 56, 56);
 }
 
 .fl-table tr:nth-child(even) {
@@ -137,7 +137,14 @@ h2{
 
 .card{
     margin: 2em;
-    background: linear-gradient(to bottom, #c4539a,#94b1df);
+    /* background: linear-gradient(to bottom, #c4539a,#94b1df); */
+    /* border: 1px solid black; */
+    box-shadow: 6px 6px 6px rgb(174, 173, 173);
+    
+}
+.card:hover {
+    transform: scale(1.1);
+    transition: all ease-in-out 0.4s;
 }
 
 .table{
@@ -147,5 +154,16 @@ h2{
 }
 
 .card-subtitle{
-    color: rgb(47, 118, 65) !important;
+    /* color: rgb(47, 118, 65) !important; */
+    color: black;
+    background-color: white;
+}
+
+span {
+    color: white;
+}
+
+th:hover {
+    transform: scale(1.05);
+    transition: all ease-in-out 0.4s;
 }

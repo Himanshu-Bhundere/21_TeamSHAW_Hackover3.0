@@ -87,11 +87,7 @@ app.get('/login', async (req, res) => {
     res.render("login")
 })
 
-app.post("/newEvent", async (req, res)=> {
-    const newOrg = new Organ(req.body);
-    await newOrg.save();
-    res.redirect("organizer")
-})
+
 
 
 app.get('/admin', async (req, res) => {
